@@ -1,0 +1,7 @@
+@mixin make-color (){
+    @each $key, $num in $color-group {
+        .color-#{$key}{
+            color: #{$num};
+        }
+    }
+}

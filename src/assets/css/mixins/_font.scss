@@ -1,0 +1,19 @@
+@mixin make-font (){
+    @each $key, $num in $font-group {
+        .font-#{$key}{
+            font-size: $num;
+        }
+    }
+}
+
+@mixin font-normal (){
+    .font-normal{font-weight: normal;}
+}
+
+@mixin font-bold (){
+    .font-normal{font-weight: bold;}
+}
+
+@mixin font-bolder (){
+    .font-normal{font-weight: bolder;}
+}

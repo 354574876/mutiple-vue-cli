@@ -1,0 +1,8 @@
+// Button sizes
+@mixin button-size($width, $height, $fontSize) {
+  height: $height;
+  width: $width;
+  font-size: $fontSize;
+  line-height: $height;
+  @include border-radius($height/2);
+}
