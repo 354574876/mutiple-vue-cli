@@ -18,6 +18,7 @@ function getEntry () {
   ViewRouter.forEach(item => {
     entry[item.filename] = `./src/views/${item.filename}/${item.filename}.js`;
   })
+  entry.config = './src/assets/js/config.js';
   return entry;
 }
 module.exports = {
