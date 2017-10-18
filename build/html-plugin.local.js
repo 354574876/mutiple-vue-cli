@@ -24,6 +24,7 @@ function FormatHtmlPlugin (filename, option = {}){
 	    filename: development ? 'index.html' : filename+'.html',
 	    template: development ? `./src/views/${filename}/index.html` : 'index.html',
 	    inject: true,
+      
 	    // chunks: ['vendors', 'manifest', filename]
 	},option)
 }
