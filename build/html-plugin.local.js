@@ -18,6 +18,7 @@ function FormatHtmlPlugin (filename, option = {}){
 		        minifyJS: true
 		    },
 		    chunksSortMode: function (chunk1, chunk2) {
+            console.log(chunk1.names[0], chunk2.names[0])
             var order = ['manifest', 'vendors', 'config', filename];
             var order1 = order.indexOf(chunk1.names[0]);
             var order2 = order.indexOf(chunk2.names[0]);
@@ -29,7 +30,7 @@ function FormatHtmlPlugin (filename, option = {}){
 	    filename: development ? 'index.html' : filename+'.html',
 	    template: development ? `./src/views/${filename}/index.html` : 'index.html',
 	    inject: true,
-	    // chunks: ['vendors', 'manifest', filename]
+	    chunks: ['manifest', 'vendors', 'config', filename]
 	},option)
 }
 
