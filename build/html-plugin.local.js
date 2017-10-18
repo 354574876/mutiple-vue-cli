@@ -17,20 +17,14 @@ function FormatHtmlPlugin (filename, option = {}){
 		        minifyCSS: true,
 		        minifyJS: true
 		    },
-		    chunksSortMode: function (chunk1, chunk2) {
-            console.log(chunk1.names[0], chunk2.names[0])
-            var order = ['manifest', 'vendors', 'config', filename];
-            var order1 = order.indexOf(chunk1.names[0]);
-            var order2 = order.indexOf(chunk2.names[0]);
-            return order1 - order2;
-        }
+		    chunksSortMode: 'manual'
 		}
 		: {};
 	return Object.assign(ext, {
 	    filename: development ? 'index.html' : filename+'.html',
 	    template: development ? `./src/views/${filename}/index.html` : 'index.html',
 	    inject: true,
-	    chunks: ['manifest', 'vendors', 'config', filename]
+	    chunks: ['manifest', 'vendor', 'config', filename]
 	},option)
 }
 
