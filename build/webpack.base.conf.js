@@ -4,6 +4,8 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const ViewRouter = require('../config/view-router');
+const getMultiEntry = require('./utils.js').getMultiEntry;
+const Pages = getMultiEntry('./src/views/**/*.js');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -13,11 +15,12 @@ function resolve (dir) {
  * 入口文件
  * @return {[Object]} [description]
  */
+
 function getEntry () {
   let entry = {};
-  ViewRouter.forEach(item => {
-    entry[item.filename] = `./src/views/${item.filename}/${item.filename}.js`;
-  })
+    for (var pathname in Pages) {
+      entry[pathname] = Pages[pathname];
+    }
   entry.config = './src/assets/js/config.js';
   return entry;
 }

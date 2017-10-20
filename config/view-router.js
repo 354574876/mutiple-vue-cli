@@ -7,7 +7,11 @@
  */
 module.exports = [
 	{
-		filename: 'dial',
+		filename: 'views/dial',
 		title: '静好大转盘'
+	},
+	{
+		filename: 'views/dial_hall',
+		title: '静好课堂'
 	}
 ]

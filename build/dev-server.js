@@ -99,22 +99,23 @@ devMiddleware.waitUntilValid(() => {
   })
 })
 
-/*************扩展路由： 登陆、密码 ************/
-
+/*********设置本地测试环境******************/
 // 设置html引擎
 app.engine('html', ejs.__express);
 
 // 设置视图路径
-app.set('views', path.join(process.cwd(), "/"));
-app.use(express.static('test'));
+app.set('views', path.join(process.cwd(), "./test/"));
+
 // 设置视图引擎
 app.set('view engine', 'html');
+// 设置静态路径
+app.use(express.static('test'));
+// app.use(express.static(process.cwd()))
 
-app.get(/test\/.*html$/, (req, res, next) => {
-  console.log(req.url);
-  // next();
-  res.render(req.url.substring(1,req.url.length))
-})
+app.get(/test\/.*\.html/, function (req, res, next) {
+  res.render(req.path.split('/')[2])
+});
+/******************************************/
 
 module.exports = {
   ready: readyPromise,

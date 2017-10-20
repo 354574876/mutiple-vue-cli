@@ -28,5 +28,9 @@
         @include make-col($i, $columns);
       }
   }
+  .col-2-10{
+    @extend %grid-column;
+    @include make-col(2, 10);
+  }
 }
 
