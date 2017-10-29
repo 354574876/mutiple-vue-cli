@@ -72,7 +72,7 @@ exports.styleLoaders = function (options) {
   return output
 }
 
-//获取多级的入口文件
+// 获取多级的入口文件
 exports.getMultiEntry = function (globPath) {
   var entries = {},
     basename, tmp, pathname;
