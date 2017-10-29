@@ -1,5 +1,5 @@
 (function(){
-    const cdn  = 'http://jhsy-img.caizhu.com/activity/';
+    const cdn  = '';
     const host = window.location.host;
 
     // 将axios挂载到Vue 原型链上，每个实例都可以使用
@@ -12,18 +12,12 @@
      * timeout：请求延迟
      * withCredentials：跨域请求浏览器写入cookie
      */
-    axios.defaults.baseURL = host === 'feqy.jinghao.com'
-        ? 'http://jhtest.jinghao.com/' : host === 'qy.jinghao.com'
-        ? 'https://api.jinghao.com/' : 'http://jhtest.jinghao.com/';
+    axios.defaults.baseURL = '';
     axios.defaults.timeout = 5000
     axios.defaults.withCredentials = true
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     axios.interceptors.request.use(config => {
-        // 如果是formData格式的数据 不需要格式化
-        if (config.data && config.data.formData) {
-            config.data = config.data.formData;
-            return config;
-        }
+        // 参数格式化
         config.data = config.data ? stringify(config.data) : undefined;
         return config
     }, error => {
@@ -32,10 +26,6 @@
     // http响应拦截器
     axios.interceptors.response.use(data => {
         // '请求成功：开始处理'
-        // 未登录 跳转登录页
-        if (data.data.flag === -100) {
-            // location.pathname = '/login.html'
-        }
         return data.data
     }, error => {
         console.log('加载失败：' + error)

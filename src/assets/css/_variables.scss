@@ -5,55 +5,7 @@
 
 
 //base variables
-$font-main: 100px !default;
-$font-size: .32rem !default;
-$backgroud-color: #f4f6f8;
-$color: #444;
-$line-heigth: 1;
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
-$default-border-color: #bbb;
-$border-width: 1px;
-$base-url: 'http://jhsy-img.caizhu.com/activity/' !default;
-$url-171111: 'http://jhsy-img.caizhu.com/activity/171111/' !default;
-//
-// Color system
-//
 
-$white:  #fff !default;
-$black:  #000 !default;
-$theme-color: #C79E61 !default;
-$color-group : (
-    444: #444,
-    666: #666,
-    999: #999,
-    000: #000,
-    fff: #fff,
-) !default;
-
-// Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
-
-$grid-columns: 24 !default;
-$grid-gutter-width: 0 !default;
-
-// font-size 
-// group
-$font-group : (
-  22: 0.22rem,
-  24: 0.24rem,
-  26: 0.26rem,
-  28: 0.28rem,
-  30: 0.30rem,
-  32: 0.32rem,
-  34: 0.34rem,
-  36: 0.36rem
-) !default;
-
-
-$transition-base:        all .2s ease-in-out !default;
-$transition-fade:        opacity .15s linear !default;
 
 
 
